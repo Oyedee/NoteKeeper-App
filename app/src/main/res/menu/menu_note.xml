@@ -1,0 +1,26 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="com.example.notekeeper.NoteActivity">
+    <item
+        android:id="@+id/action_previous"
+        android:icon="@drawable/ic_previous_button"
+        android:orderInCategory="100"
+        android:title="Previous"
+        app:showAsAction="ifRoom|withText" />
+    <item
+        android:id="@+id/action_send_mail"
+        android:orderInCategory="101"
+        android:title="Send as email"
+        app:showAsAction="never" />
+    <item
+        android:id="@+id/action_cancel"
+        android:icon="@drawable/ic_cancel_button"
+        android:title="Cancel Note"
+        app:showAsAction="ifRoom" />
+    <item
+        android:id="@+id/action_next"
+        android:icon="@drawable/ic_next_button_2"
+        android:title="Next"
+        app:showAsAction="ifRoom" />
+</menu>
