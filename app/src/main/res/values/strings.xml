@@ -11,4 +11,14 @@
     <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
     <string name="title_activity_note_list">NoteListActivity</string>
     <string name="title_activity_note">Edit Note</string>
+    <string name="title_activity_navigation_main">NavigationMainActivity</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="nav_header_title">NoteKeeper</string>
+    <string name="nav_header_subtitle">developerporay@gmail.com</string>
+    <string name="nav_header_desc">Navigation header</string>
+
+    <string name="menu_home">Notes</string>
+    <string name="menu_gallery">Courses</string>
+    <string name="menu_slideshow">Slideshow</string>
 </resources>
