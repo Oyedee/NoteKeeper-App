@@ -21,4 +21,6 @@
     <string name="menu_home">Notes</string>
     <string name="menu_gallery">Courses</string>
     <string name="menu_slideshow">Slideshow</string>
+    <string name="text_courses_res">TextView</string>
+    <string name="text_title_res">TextView</string>
 </resources>
