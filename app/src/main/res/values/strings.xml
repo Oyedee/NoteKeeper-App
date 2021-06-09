@@ -23,4 +23,7 @@
     <string name="menu_slideshow">Slideshow</string>
     <string name="text_courses_res">TextView</string>
     <string name="text_title_res">TextView</string>
+    <string name="nav_share_message">This is the Slideshow menu. Under Construction!!</string>
+    <string name="icon_send">Send</string>
+    <string name="nav_send_message">Send Note. Under Construction</string>
 </resources>

@@ -18,13 +18,12 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.notekeeper.databinding.ActivityNavigationMainBinding;
+import com.google.android.material.snackbar.Snackbar;
 
 import java.util.List;
 
 public class NavigationMainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
 
-    //private AppBarConfiguration mAppBarConfiguration;
-    private ActivityNavigationMainBinding binding;
     private NoteRecyclerAdapter mNoteRecyclerAdapter;
     private RecyclerView mRecyclerItems;
     private LinearLayoutManager mNotesLayoutManager;
@@ -37,7 +36,8 @@ public class NavigationMainActivity extends AppCompatActivity implements Navigat
         super.onCreate(savedInstanceState);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
 
-        binding = ActivityNavigationMainBinding.inflate(getLayoutInflater());
+        //private AppBarConfiguration mAppBarConfiguration;
+        com.example.notekeeper.databinding.ActivityNavigationMainBinding binding = ActivityNavigationMainBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
 
         setSupportActionBar(binding.appBarNavigationMain.toolbar);
@@ -49,7 +49,7 @@ public class NavigationMainActivity extends AppCompatActivity implements Navigat
             }
         });
         //reference to our drawerLayout on the xml layout resource file / binding
-        DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
+        DrawerLayout drawer = findViewById(R.id.drawer_layout);
 
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
                 this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
@@ -57,7 +57,7 @@ public class NavigationMainActivity extends AppCompatActivity implements Navigat
         toggle.syncState();
 
         //reference to our navigation view ID on the xml layout resource file / binding
-        NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
+        NavigationView navigationView = findViewById(R.id.nav_view);
 //        // Passing each menu ID as a set of Ids because each
 //        // menu should be considered as top level destinations.
 //        mAppBarConfiguration = new AppBarConfiguration.Builder(
@@ -80,9 +80,9 @@ public class NavigationMainActivity extends AppCompatActivity implements Navigat
     }
 
     private void initializeDisplayContent() {
-        mRecyclerItems = (RecyclerView) findViewById(R.id.list_items);
+        mRecyclerItems = findViewById(R.id.list_items);
         mNotesLayoutManager = new LinearLayoutManager(this);
-        mCourseLayoutManager = new GridLayoutManager(this, 2);
+        mCourseLayoutManager = new GridLayoutManager(this, getResources().getInteger(R.integer.course_grid_span));
 
         List<CourseInfo> courses = DataManager.getInstance().getCourses();
         mCourseRecyclerAdapter = new CourseRecyclerAdapter(this, courses);
@@ -105,7 +105,7 @@ public class NavigationMainActivity extends AppCompatActivity implements Navigat
     }
 
     private void selectNavigationMenuItem(int id) {
-        NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view); // get navigation view reference
+        NavigationView navigationView = findViewById(R.id.nav_view); // get navigation view reference
         Menu menu = navigationView.getMenu(); // get menu group from navigation view
         menu.findItem(id).setChecked(true); // set selection feedback to true when Notes menu item is selected from navigation view
     }
@@ -126,7 +126,7 @@ public class NavigationMainActivity extends AppCompatActivity implements Navigat
 //    }
     @Override
     public void onBackPressed() {
-        DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
+        DrawerLayout drawer = findViewById(R.id.drawer_layout);
         if(drawer.isDrawerOpen(GravityCompat.START)){
             drawer.closeDrawer(GravityCompat.START);
         }else {
@@ -142,11 +142,18 @@ public class NavigationMainActivity extends AppCompatActivity implements Navigat
             displayNotes();
         } else if (id == R.id.nav_courses) {
             displayCourses();
-        } else if (id == R.id.nav_slideshow) {
-
+        } else if (id == R.id.nav_share) {
+            handleSelection(R.string.nav_share_message);
+        } else if (id == R.id.nav_send) {
+            handleSelection(R.string.nav_send_message);
         }
-        DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
+        DrawerLayout drawer = findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
         return true;
+    }
+
+    private void handleSelection(int message_id) {
+        View view = findViewById(R.id.list_items);
+        Snackbar.make(view, message_id, Snackbar.LENGTH_LONG).show();
     }
 }
