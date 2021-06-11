@@ -14,4 +14,9 @@
         <item name="android:textAlignment">center</item>
     </style>
 
+    <style name="AddFab" parent="@style/Widget.MaterialComponents.FloatingActionButton">
+        <item name="srcCompat">@drawable/ic_baseline_add_circle_24</item>
+        <item name="android:tint">@android:color/white</item>
+    </style>
+
 </resources>
