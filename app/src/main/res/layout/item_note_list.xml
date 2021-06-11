@@ -25,7 +25,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="8dp"
                 android:text="@string/text_title_res"
-                android:textAppearance="@android:style/TextAppearance.Material.Large"
+                android:textAppearance="@style/courseTitle"
                 app:layout_constraintStart_toEndOf="@+id/note_icon"
                 app:layout_constraintTop_toTopOf="parent" />
 
