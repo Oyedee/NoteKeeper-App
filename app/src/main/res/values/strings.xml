@@ -33,7 +33,7 @@
     <string name="sync_header">Sync</string>
 
     <!-- Messages Preferences -->
-    <string name="signature_title">Your signature</string>
+    <string name="signature_title">Display Name</string>
     <string name="reply_title">Default reply action</string>
 
     <!-- Sync Preferences -->
@@ -42,4 +42,7 @@
     <string name="attachment_summary_on">Automatically download attachments for incoming emails
     </string>
     <string name="attachment_summary_off">Only download attachments when manually requested</string>
+    <string name="root_header">Root</string>
+    <string name="pref_title_email_address">Email Address</string>
+    <string name="pref_title_favourite_social">Favourite Social Network</string>
 </resources>
