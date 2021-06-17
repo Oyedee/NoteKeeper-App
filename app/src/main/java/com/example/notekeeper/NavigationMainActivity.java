@@ -11,6 +11,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
+import androidx.preference.PreferenceManager;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -46,6 +47,12 @@ public class NavigationMainActivity extends AppCompatActivity implements Navigat
                 startActivity(intent);
             }
         });
+
+        //initialize preference system with each of the default values in our preferences
+        PreferenceManager.setDefaultValues(this, R.xml.messages_preferences, false);
+        PreferenceManager.setDefaultValues(this, R.xml.sync_preferences, false);
+        PreferenceManager.setDefaultValues(this, R.xml.root_preferences, false);
+
         //reference to our drawerLayout on the xml layout resource file / binding
         DrawerLayout drawer = findViewById(R.id.drawer_layout);
 
