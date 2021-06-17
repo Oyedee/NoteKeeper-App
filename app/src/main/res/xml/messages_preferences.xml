@@ -13,5 +13,12 @@
         android:selectAllOnFocus="true"
         android:title="@string/pref_title_email_address"
         app:useSimpleSummaryProvider="true" />
+    <ListPreference
+        android:defaultValue="@string/pref_default_favourite_social"
+        android:entries="@array/pref_entries_favourite_social"
+        android:entryValues="@array/pref_values_favourite_social"
+        android:key="user_favourite_social"
+        android:title="@string/pref_title_favourite_social"
+        app:useSimpleSummaryProvider="true" />
 
 </PreferenceScreen>
