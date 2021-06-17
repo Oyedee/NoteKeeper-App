@@ -12,4 +12,10 @@
         app:key="sync_header"
         app:title="@string/sync_header" />
 
+    <Preference
+        app:fragment="com.example.notekeeper.SettingsActivity$RootFragment"
+        app:icon="@drawable/sync"
+        app:key="root_header"
+        app:title="@string/root_header" />
+
 </PreferenceScreen>
